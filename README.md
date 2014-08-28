@@ -20,6 +20,11 @@ Using `lift.op` provides syntactic sugar for prefix and infix operators:
 var h = lift.op(f)['+'](g)       // equivalent to h above
 var negativeF = lift.op['-'](f)  // gives -f, i.e. -f(x) = -2x
 ```
+Constants may be used instead of functions:
+```javascript
+// h = f - 3, i.e. h(x) = f(x) - 3 = 2x - 3
+h = lift.op(f)['-'](3)
+```
 Infix operators can be chained:
 ```javascript
 var id = function(x) {return x;}
